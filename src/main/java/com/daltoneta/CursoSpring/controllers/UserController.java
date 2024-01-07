@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("user")
 
 public class UserController {
-    //Bring all users
+    //This brings all users
     @RequestMapping(value = "/", method=RequestMethod.GET)
     List<User> getAll(){
         List<User> list = new ArrayList<>();
@@ -27,6 +27,42 @@ public class UserController {
         list.add(user);
 
         return list;
+    }
+
+    //This bring will up a user by id
+    @RequestMapping(value = "/{id}", method=RequestMethod.GET)
+    User get(@PathVariable long id){
+        User user = new User();
+        user.setName("Octavio"); 
+        user.setLastName("Martinez");
+
+        return user;
+    }
+
+    //Register user
+    @RequestMapping(value = "/", method=RequestMethod.POST)
+    User register(@RequestBody User user){
+        
+        //TODO: register in the database
+
+        return user;
+    }
+
+    //Update user
+    @RequestMapping(value = "/{id}", method=RequestMethod.PUT)
+    User update(@RequestBody User user){
+         
+        //TODO: update in the database
+
+        return user;
+    }
+
+    //Dalete user
+    @RequestMapping(value = "/{id}", method=RequestMethod.DELETE)
+    void delete(@PathVariable long id){
+        
+        //TODO: delete of the database
+
     }
     
 }
