@@ -9,38 +9,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "tb_user")
 public class User {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
     private long id;
-
-    @Column(name = "name")
     private String name;
-    @Column(name = "lastname")
-    private String lastname;
-    @Column(name = "email")
+    private String lastName;
     private String email;
-    @Column(name = "phone_number")
-    private String phone;
-    @Column(name = "birthday")
-    private Date birthday;
+    private String phoneNumber;
+    private Date dateBirth;
 
 
-    public User() {
-
+    public User(){
+        
     }
 
-    public User(long id, String name, String lastname, String email, String phone, Date birthday) {
+
+    public User(long id, String name, String lastName, String email, String phoneNumber, Date dateBirth) {
         this.id = id;
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.email = email;
-        this.phone = phone;
-        this.birthday = birthday;
+        this.phoneNumber = phoneNumber;
+        this.dateBirth = dateBirth;
     }
 
 
@@ -56,11 +45,11 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
     public String getEmail() {
         return email;
@@ -68,21 +57,17 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
-    public Date getBirthday() {
-        return birthday;
+    public Date getDateBirth() {
+        return dateBirth;
     }
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setDateBirth(Date dateBirth) {
+        this.dateBirth = dateBirth;
     }
-
-
-
-    
     
 }
